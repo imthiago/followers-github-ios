@@ -13,7 +13,7 @@ class FollowerLoadingDataViewController: UIViewController {
     var containerView: UIView?
 
     // MARK: - Internal functions
-    func presentLoading() {
+    func showLoading() {
         guard var containerView = containerView else { return }
         containerView = UIView(frame: view.bounds)
         view.addSubviews(containerView)

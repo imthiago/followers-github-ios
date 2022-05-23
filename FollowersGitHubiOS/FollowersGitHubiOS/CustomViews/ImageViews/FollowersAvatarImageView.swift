@@ -25,7 +25,9 @@ class FollowersAvatarImageView: UIImageView {
 
     // MARK: - Internal functions
     func fetchImage(fromURL url: String) {
-
+        Task {
+            image = await NetworkService.shared.downloadImage(from: url) ?? placeholderImage
+        }
     }
 
     // MARK: - Private functions

@@ -29,6 +29,7 @@ class FollowerItemViewController: FollowersInfoItemViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
     }
 
     // MARK: - Internal properties
