@@ -18,6 +18,15 @@
 		75BA3DB8283BE8D2000BEC8E /* FollowersTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DB7283BE8D2000BEC8E /* FollowersTabBarController.swift */; };
 		75BA3DBB283BECE3000BEC8E /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DBA283BECE3000BEC8E /* ViewCodable.swift */; };
 		75BA3DBE283BED5E000BEC8E /* UIViewController+Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DBD283BED5E000BEC8E /* UIViewController+Followers.swift */; };
+		75BA3DC0283BEEA9000BEC8E /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DBF283BEEA9000BEC8E /* App+Injection.swift */; };
+		75BA3DCB283BEF74000BEC8E /* FollowersBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DCA283BEF74000BEC8E /* FollowersBodyLabel.swift */; };
+		75BA3DCD283BF041000BEC8E /* FollowersTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DCC283BF041000BEC8E /* FollowersTitleLabel.swift */; };
+		75BA3DCF283BF127000BEC8E /* FollowersSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DCE283BF127000BEC8E /* FollowersSecondaryTitleLabel.swift */; };
+		75BA3DD1283BF1B7000BEC8E /* FollowersAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DD0283BF1B7000BEC8E /* FollowersAlertViewController.swift */; };
+		75BA3DD3283BF1ED000BEC8E /* FollowersAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DD2283BF1ED000BEC8E /* FollowersAlertContainerView.swift */; };
+		75BA3DD6283BF245000BEC8E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DD5283BF245000BEC8E /* Follower.swift */; };
+		75BA3DD8283BF24A000BEC8E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DD7283BF24A000BEC8E /* User.swift */; };
+		75BA3DDA283BF308000BEC8E /* FollowersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DD9283BF308000BEC8E /* FollowersButton.swift */; };
 		7820105F52F504C37732E43D /* Pods_FollowersGitHubiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B159D1E910C8F17E34F1ABCB /* Pods_FollowersGitHubiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +54,15 @@
 		75BA3DB7283BE8D2000BEC8E /* FollowersTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTabBarController.swift; sourceTree = "<group>"; };
 		75BA3DBA283BECE3000BEC8E /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		75BA3DBD283BED5E000BEC8E /* UIViewController+Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Followers.swift"; sourceTree = "<group>"; };
+		75BA3DBF283BEEA9000BEC8E /* App+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Injection.swift"; sourceTree = "<group>"; };
+		75BA3DCA283BEF74000BEC8E /* FollowersBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersBodyLabel.swift; sourceTree = "<group>"; };
+		75BA3DCC283BF041000BEC8E /* FollowersTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTitleLabel.swift; sourceTree = "<group>"; };
+		75BA3DCE283BF127000BEC8E /* FollowersSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		75BA3DD0283BF1B7000BEC8E /* FollowersAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersAlertViewController.swift; sourceTree = "<group>"; };
+		75BA3DD2283BF1ED000BEC8E /* FollowersAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersAlertContainerView.swift; sourceTree = "<group>"; };
+		75BA3DD5283BF245000BEC8E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		75BA3DD7283BF24A000BEC8E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		75BA3DD9283BF308000BEC8E /* FollowersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersButton.swift; sourceTree = "<group>"; };
 		7DA1F205D43B3CAF9C3A89E8 /* Pods_FollowersGitHubiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FollowersGitHubiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A106F5F66C898616D33D97B /* Pods-FollowersGitHubiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowersGitHubiOS.release.xcconfig"; path = "Target Support Files/Pods-FollowersGitHubiOS/Pods-FollowersGitHubiOS.release.xcconfig"; sourceTree = "<group>"; };
 		8B8651002419EB898DBF0CC9 /* Pods-FollowersGitHubiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowersGitHubiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FollowersGitHubiOSTests/Pods-FollowersGitHubiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,10 +114,11 @@
 		75BA3D7E283BE5C6000BEC8E /* FollowersGitHubiOS */ = {
 			isa = PBXGroup;
 			children = (
+				75BA3DD4283BF230000BEC8E /* Model */,
 				75BA3DBC283BED47000BEC8E /* Extensions */,
 				75BA3DB9283BECD5000BEC8E /* Utils */,
 				75BA3DB6283BE8AC000BEC8E /* CustomViews */,
-				75BA3DB1283BE85D000BEC8E /* Views */,
+				75BA3DB1283BE85D000BEC8E /* View */,
 				75BA3DB0283BE7F2000BEC8E /* Support */,
 			);
 			path = FollowersGitHubiOS;
@@ -125,19 +144,26 @@
 			name = Support;
 			sourceTree = "<group>";
 		};
-		75BA3DB1283BE85D000BEC8E /* Views */ = {
+		75BA3DB1283BE85D000BEC8E /* View */ = {
 			isa = PBXGroup;
 			children = (
 				75BA3DB2283BE878000BEC8E /* SearchFollowerViewController.swift */,
 				75BA3DB4283BE89C000BEC8E /* FavoriteFollowersListViewController.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		75BA3DB6283BE8AC000BEC8E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				75BA3DB7283BE8D2000BEC8E /* FollowersTabBarController.swift */,
+				75BA3DC1283BEF04000BEC8E /* TabBarControllers */,
+				75BA3DC2283BEF19000BEC8E /* Labels */,
+				75BA3DC9283BEF45000BEC8E /* ViewControllers */,
+				75BA3DC8283BEF3F000BEC8E /* ImageViews */,
+				75BA3DC7283BEF38000BEC8E /* TextFields */,
+				75BA3DC6283BEF35000BEC8E /* Buttons */,
+				75BA3DC5283BEF2E000BEC8E /* Views */,
+				75BA3DC3283BEF27000BEC8E /* Cells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -146,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				75BA3DBA283BECE3000BEC8E /* ViewCodable.swift */,
+				75BA3DBF283BEEA9000BEC8E /* App+Injection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -156,6 +183,78 @@
 				75BA3DBD283BED5E000BEC8E /* UIViewController+Followers.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		75BA3DC1283BEF04000BEC8E /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75BA3DB7283BE8D2000BEC8E /* FollowersTabBarController.swift */,
+			);
+			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		75BA3DC2283BEF19000BEC8E /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				75BA3DCA283BEF74000BEC8E /* FollowersBodyLabel.swift */,
+				75BA3DCC283BF041000BEC8E /* FollowersTitleLabel.swift */,
+				75BA3DCE283BF127000BEC8E /* FollowersSecondaryTitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		75BA3DC3283BEF27000BEC8E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		75BA3DC5283BEF2E000BEC8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75BA3DD2283BF1ED000BEC8E /* FollowersAlertContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75BA3DC6283BEF35000BEC8E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				75BA3DD9283BF308000BEC8E /* FollowersButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		75BA3DC7283BEF38000BEC8E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		75BA3DC8283BEF3F000BEC8E /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		75BA3DC9283BEF45000BEC8E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75BA3DD0283BF1B7000BEC8E /* FollowersAlertViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		75BA3DD4283BF230000BEC8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75BA3DD5283BF245000BEC8E /* Follower.swift */,
+				75BA3DD7283BF24A000BEC8E /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B2D17B08DFFE115692B08C6C /* Pods */ = {
@@ -363,13 +462,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BA3DD3283BF1ED000BEC8E /* FollowersAlertContainerView.swift in Sources */,
+				75BA3DD6283BF245000BEC8E /* Follower.swift in Sources */,
 				75BA3DB5283BE89C000BEC8E /* FavoriteFollowersListViewController.swift in Sources */,
+				75BA3DD1283BF1B7000BEC8E /* FollowersAlertViewController.swift in Sources */,
+				75BA3DCD283BF041000BEC8E /* FollowersTitleLabel.swift in Sources */,
 				75BA3DB8283BE8D2000BEC8E /* FollowersTabBarController.swift in Sources */,
 				75BA3D80283BE5C6000BEC8E /* AppDelegate.swift in Sources */,
 				75BA3DB3283BE878000BEC8E /* SearchFollowerViewController.swift in Sources */,
+				75BA3DD8283BF24A000BEC8E /* User.swift in Sources */,
+				75BA3DDA283BF308000BEC8E /* FollowersButton.swift in Sources */,
+				75BA3DCF283BF127000BEC8E /* FollowersSecondaryTitleLabel.swift in Sources */,
 				75BA3D82283BE5C6000BEC8E /* SceneDelegate.swift in Sources */,
+				75BA3DC0283BEEA9000BEC8E /* App+Injection.swift in Sources */,
 				75BA3DBE283BED5E000BEC8E /* UIViewController+Followers.swift in Sources */,
 				75BA3DBB283BECE3000BEC8E /* ViewCodable.swift in Sources */,
+				75BA3DCB283BEF74000BEC8E /* FollowersBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
