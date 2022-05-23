@@ -88,3 +88,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+*.pbxproj
+*.xcworkspacedata
+FollowersGitHubiOS.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+.DS_Store
+*.lock
+Pods/
+FollowersGitHubiOS.xcworkspace/
