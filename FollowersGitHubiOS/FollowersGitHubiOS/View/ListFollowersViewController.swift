@@ -38,7 +38,7 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        applyViewCode()
+        configure()
         fetchFollowers(username: username, page: page)
     }
 
@@ -100,22 +100,7 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
         }
     }
 
-    @objc private func didTapAddButton() {
-
-    }
-}
-
-// MARK: - Viewcodable
-extension ListFollowersViewController: ViewCodable {
-    func buildHierarchy() {
-
-    }
-
-    func setupConstraints() {
-
-    }
-
-    func configureViews() {
+    func configure() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         let searchController                                    = UISearchController()
@@ -139,6 +124,10 @@ extension ListFollowersViewController: ViewCodable {
             cell.set(follower: follower)
             return cell
         })
+    }
+
+    @objc private func didTapAddButton() {
+
     }
 }
 
