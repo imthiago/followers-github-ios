@@ -12,7 +12,7 @@ extension UIView {
         views.forEach { addSubview($0) }
     }
 
-    func pinToEfges(of superview: UIView) {
+    func pinToEdges(of superview: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: superview.topAnchor),
@@ -22,5 +22,3 @@ extension UIView {
         ])
     }
 }
-
-

@@ -136,12 +136,12 @@
 		75BA3D7E283BE5C6000BEC8E /* FollowersGitHubiOS */ = {
 			isa = PBXGroup;
 			children = (
+				75BA3DB9283BECD5000BEC8E /* Utils */,
+				75BA3DBC283BED47000BEC8E /* Extensions */,
 				75BA3DDF283BF77A000BEC8E /* Services */,
 				75BA3DD4283BF230000BEC8E /* Model */,
-				75BA3DBC283BED47000BEC8E /* Extensions */,
-				75BA3DB9283BECD5000BEC8E /* Utils */,
-				75BA3DB6283BE8AC000BEC8E /* CustomViews */,
 				75BA3DB1283BE85D000BEC8E /* View */,
+				75BA3DB6283BE8AC000BEC8E /* CustomViews */,
 				75BA3DB0283BE7F2000BEC8E /* Support */,
 			);
 			path = FollowersGitHubiOS;

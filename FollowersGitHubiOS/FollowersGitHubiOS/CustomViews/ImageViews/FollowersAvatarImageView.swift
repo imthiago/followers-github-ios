@@ -25,7 +25,7 @@ class FollowersAvatarImageView: UIImageView {
 
     // MARK: - Internal functions
     func fetchImage(fromURL url: String) {
-        
+
     }
 
     // MARK: - Private functions
