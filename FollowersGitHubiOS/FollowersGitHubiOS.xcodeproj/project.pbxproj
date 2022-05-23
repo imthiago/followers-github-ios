@@ -38,6 +38,11 @@
 		75BA3DED283BFEA9000BEC8E /* FavoriteFollowersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DEC283BFEA9000BEC8E /* FavoriteFollowersTableViewCell.swift */; };
 		75BA3DEF283BFFC4000BEC8E /* Date+Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DEE283BFFC4000BEC8E /* Date+Followers.swift */; };
 		75BA3DF1283BFFDB000BEC8E /* UITableView+Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DF0283BFFDB000BEC8E /* UITableView+Followers.swift */; };
+		75BA3DF3283C0296000BEC8E /* FollowersInfoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DF2283C0296000BEC8E /* FollowersInfoItemViewController.swift */; };
+		75BA3DF6283C1894000BEC8E /* FollowersRepositoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DF5283C1894000BEC8E /* FollowersRepositoryItemViewController.swift */; };
+		75BA3DF8283C1A7A000BEC8E /* FollowerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DF7283C1A7A000BEC8E /* FollowerItemViewController.swift */; };
+		75BA3DFA283C1B73000BEC8E /* FollowerHeaderUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DF9283C1B73000BEC8E /* FollowerHeaderUserInfoViewController.swift */; };
+		75BA3DFC283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DFB283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift */; };
 		7820105F52F504C37732E43D /* Pods_FollowersGitHubiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B159D1E910C8F17E34F1ABCB /* Pods_FollowersGitHubiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +90,11 @@
 		75BA3DEC283BFEA9000BEC8E /* FavoriteFollowersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFollowersTableViewCell.swift; sourceTree = "<group>"; };
 		75BA3DEE283BFFC4000BEC8E /* Date+Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Followers.swift"; sourceTree = "<group>"; };
 		75BA3DF0283BFFDB000BEC8E /* UITableView+Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Followers.swift"; sourceTree = "<group>"; };
+		75BA3DF2283C0296000BEC8E /* FollowersInfoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersInfoItemViewController.swift; sourceTree = "<group>"; };
+		75BA3DF5283C1894000BEC8E /* FollowersRepositoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersRepositoryItemViewController.swift; sourceTree = "<group>"; };
+		75BA3DF7283C1A7A000BEC8E /* FollowerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerItemViewController.swift; sourceTree = "<group>"; };
+		75BA3DF9283C1B73000BEC8E /* FollowerHeaderUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerHeaderUserInfoViewController.swift; sourceTree = "<group>"; };
+		75BA3DFB283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerLoadingDataViewController.swift; sourceTree = "<group>"; };
 		7DA1F205D43B3CAF9C3A89E8 /* Pods_FollowersGitHubiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FollowersGitHubiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A106F5F66C898616D33D97B /* Pods-FollowersGitHubiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowersGitHubiOS.release.xcconfig"; path = "Target Support Files/Pods-FollowersGitHubiOS/Pods-FollowersGitHubiOS.release.xcconfig"; sourceTree = "<group>"; };
 		8B8651002419EB898DBF0CC9 /* Pods-FollowersGitHubiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowersGitHubiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FollowersGitHubiOSTests/Pods-FollowersGitHubiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -276,7 +286,10 @@
 		75BA3DC9283BEF45000BEC8E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				75BA3DF4283C05D9000BEC8E /* InfoItemViewControllers */,
 				75BA3DD0283BF1B7000BEC8E /* FollowersAlertViewController.swift */,
+				75BA3DF9283C1B73000BEC8E /* FollowerHeaderUserInfoViewController.swift */,
+				75BA3DFB283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +309,16 @@
 				75BA3DE0283BF782000BEC8E /* NetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		75BA3DF4283C05D9000BEC8E /* InfoItemViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75BA3DF2283C0296000BEC8E /* FollowersInfoItemViewController.swift */,
+				75BA3DF5283C1894000BEC8E /* FollowersRepositoryItemViewController.swift */,
+				75BA3DF7283C1A7A000BEC8E /* FollowerItemViewController.swift */,
+			);
+			path = InfoItemViewControllers;
 			sourceTree = "<group>";
 		};
 		B2D17B08DFFE115692B08C6C /* Pods */ = {
@@ -505,15 +528,20 @@
 			files = (
 				75BA3DEB283BFCC9000BEC8E /* FollowersCollectionViewCell.swift in Sources */,
 				75BA3DD3283BF1ED000BEC8E /* FollowersAlertContainerView.swift in Sources */,
+				75BA3DF8283C1A7A000BEC8E /* FollowerItemViewController.swift in Sources */,
+				75BA3DFC283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift in Sources */,
 				75BA3DE3283BF814000BEC8E /* FollowersTextField.swift in Sources */,
+				75BA3DFA283C1B73000BEC8E /* FollowerHeaderUserInfoViewController.swift in Sources */,
 				75BA3DDE283BF6C2000BEC8E /* AppConstants.swift in Sources */,
 				75BA3DD6283BF245000BEC8E /* Follower.swift in Sources */,
 				75BA3DB5283BE89C000BEC8E /* FavoriteFollowersListViewController.swift in Sources */,
 				75BA3DD1283BF1B7000BEC8E /* FollowersAlertViewController.swift in Sources */,
 				75BA3DCD283BF041000BEC8E /* FollowersTitleLabel.swift in Sources */,
 				75BA3DB8283BE8D2000BEC8E /* FollowersTabBarController.swift in Sources */,
+				75BA3DF6283C1894000BEC8E /* FollowersRepositoryItemViewController.swift in Sources */,
 				75BA3DEF283BFFC4000BEC8E /* Date+Followers.swift in Sources */,
 				75BA3DE9283BFAEB000BEC8E /* UIView+Followers.swift in Sources */,
+				75BA3DF3283C0296000BEC8E /* FollowersInfoItemViewController.swift in Sources */,
 				75BA3DED283BFEA9000BEC8E /* FavoriteFollowersTableViewCell.swift in Sources */,
 				75BA3D80283BE5C6000BEC8E /* AppDelegate.swift in Sources */,
 				75BA3DB3283BE878000BEC8E /* SearchFollowerViewController.swift in Sources */,
