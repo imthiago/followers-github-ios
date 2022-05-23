@@ -45,6 +45,8 @@
 		75BA3DFC283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DFB283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift */; };
 		75BA3DFE283C2120000BEC8E /* FollowersUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DFD283C2120000BEC8E /* FollowersUIHelper.swift */; };
 		75BA3E00283C214E000BEC8E /* FollowerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3DFF283C214E000BEC8E /* FollowerErrors.swift */; };
+		75BA3E02283C2250000BEC8E /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3E01283C2250000BEC8E /* UserDefaultsService.swift */; };
+		75BA3E04283C25E7000BEC8E /* ListFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3E03283C25E7000BEC8E /* ListFollowersViewController.swift */; };
 		7820105F52F504C37732E43D /* Pods_FollowersGitHubiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B159D1E910C8F17E34F1ABCB /* Pods_FollowersGitHubiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		75BA3DFB283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerLoadingDataViewController.swift; sourceTree = "<group>"; };
 		75BA3DFD283C2120000BEC8E /* FollowersUIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersUIHelper.swift; sourceTree = "<group>"; };
 		75BA3DFF283C214E000BEC8E /* FollowerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerErrors.swift; sourceTree = "<group>"; };
+		75BA3E01283C2250000BEC8E /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		75BA3E03283C25E7000BEC8E /* ListFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFollowersViewController.swift; sourceTree = "<group>"; };
 		7DA1F205D43B3CAF9C3A89E8 /* Pods_FollowersGitHubiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FollowersGitHubiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A106F5F66C898616D33D97B /* Pods-FollowersGitHubiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowersGitHubiOS.release.xcconfig"; path = "Target Support Files/Pods-FollowersGitHubiOS/Pods-FollowersGitHubiOS.release.xcconfig"; sourceTree = "<group>"; };
 		8B8651002419EB898DBF0CC9 /* Pods-FollowersGitHubiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowersGitHubiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FollowersGitHubiOSTests/Pods-FollowersGitHubiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				75BA3DB2283BE878000BEC8E /* SearchFollowerViewController.swift */,
 				75BA3DB4283BE89C000BEC8E /* FavoriteFollowersListViewController.swift */,
+				75BA3E03283C25E7000BEC8E /* ListFollowersViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				75BA3DE0283BF782000BEC8E /* NetworkService.swift */,
+				75BA3E01283C2250000BEC8E /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -536,6 +542,7 @@
 				75BA3DD3283BF1ED000BEC8E /* FollowersAlertContainerView.swift in Sources */,
 				75BA3DF8283C1A7A000BEC8E /* FollowerItemViewController.swift in Sources */,
 				75BA3DFC283C1D9B000BEC8E /* FollowerLoadingDataViewController.swift in Sources */,
+				75BA3E04283C25E7000BEC8E /* ListFollowersViewController.swift in Sources */,
 				75BA3DE3283BF814000BEC8E /* FollowersTextField.swift in Sources */,
 				75BA3DFA283C1B73000BEC8E /* FollowerHeaderUserInfoViewController.swift in Sources */,
 				75BA3DDE283BF6C2000BEC8E /* AppConstants.swift in Sources */,
@@ -554,6 +561,7 @@
 				75BA3DD8283BF24A000BEC8E /* User.swift in Sources */,
 				75BA3E00283C214E000BEC8E /* FollowerErrors.swift in Sources */,
 				75BA3DDC283BF639000BEC8E /* FollowersAvatarImageView.swift in Sources */,
+				75BA3E02283C2250000BEC8E /* UserDefaultsService.swift in Sources */,
 				75BA3DDA283BF308000BEC8E /* FollowersButton.swift in Sources */,
 				75BA3DCF283BF127000BEC8E /* FollowersSecondaryTitleLabel.swift in Sources */,
 				75BA3DE5283BF864000BEC8E /* FollowersEmptyStateView.swift in Sources */,

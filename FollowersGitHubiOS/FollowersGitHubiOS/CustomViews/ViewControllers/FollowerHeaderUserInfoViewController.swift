@@ -72,7 +72,8 @@ extension FollowerHeaderUserInfoViewController: ViewCodable {
 
         NSLayoutConstraint.activate([
             locationImageView.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
-            locationImageView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: textImagePadding),
+            locationImageView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor,
+                                                       constant: textImagePadding),
             locationImageView.widthAnchor.constraint(equalToConstant: 20),
             locationImageView.heightAnchor.constraint(equalToConstant: 20)
         ])
