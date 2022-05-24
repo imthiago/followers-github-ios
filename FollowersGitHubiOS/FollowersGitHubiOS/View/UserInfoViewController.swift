@@ -34,8 +34,9 @@ class UserInfoViewController: FollowerLoadingDataViewController {
 
     private func configureViewController() {
         view.backgroundColor = .systemBackground
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
-        navigationItem.rightBarButtonItem = doneButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                            target: self,
+                                                            action: #selector(dismissViewController))
     }
 
     private func configureScrollView() {

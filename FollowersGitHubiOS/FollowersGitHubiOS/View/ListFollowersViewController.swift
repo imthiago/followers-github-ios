@@ -155,7 +155,7 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
 
         UserDefaultsService.updateWith(favorite: follower, actionType: .add) { [weak self] error in
             guard let error = error else {
-                self?.showFollowersAlert(title: "Success!", message: "Successfully favorited user", buttonTitle: "OK")
+                self?.showFollowersAlert(title: "Success!", message: "Successfully favorited user 🎊", buttonTitle: "OK")
                 return
             }
             self?.showFollowersAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")

@@ -13,8 +13,8 @@ class SearchFollowerViewController: UIViewController {
     private let logoImageView       = UIImageView(frame: .zero)
     private let usernameTextField   = FollowersTextField(frame: .zero)
     private let searchButton        = FollowersButton(color: .systemGray,
-                                                      title: "Search Followers",
-                                                      systemImageName: "person.3")
+                                                      title: "Search GitHub Profile",
+                                                      systemImageName: "person.text.rectangle")
 
     // MARK: - Computed properties
     private var enteredUsername: Bool {
