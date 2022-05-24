@@ -103,19 +103,43 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
     func configure() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        configureSearchController()
+        configureCollectionView()
+    }
+
+    @objc private func didTapAddButton() {
+        showLoading()
+        Task {
+            do {
+                let user = try await NetworkService.shared.getUserInfo(for: username)
+                favoriteUser(user)
+                dismissLoadingView()
+            } catch {
+                if let followerError = error as? FollowerErrors {
+                    showFollowersAlert(title: "Something went wrong",
+                                       message: followerError.rawValue,
+                                       buttonTitle: "OK")
+                } else {
+                    showDefaultFollowerError()
+                }
+            }
+        }
+    }
+
+    private func configureSearchController() {
         let searchController                                    = UISearchController()
         searchController.searchResultsUpdater                   = self
         searchController.searchBar.placeholder                  = "Search for a username"
         searchController.obscuresBackgroundDuringPresentation   = false
         navigationItem.searchController                         = searchController
+    }
 
-        collectionView = .init(frame: view.bounds,
-                               collectionViewLayout: FollowersUIHelper.createThreeColumnsFlowLayout(in: view))
+    private func configureCollectionView() {
+        collectionView = .init(frame: view.bounds, collectionViewLayout: FollowersUIHelper.createThreeColumnsFlowLayout(in: view))
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(FollowersCollectionViewCell.self,
-                                forCellWithReuseIdentifier: FollowersCollectionViewCell.reuseID)
+        collectionView.register(FollowersCollectionViewCell.self, forCellWithReuseIdentifier: FollowersCollectionViewCell.reuseID)
 
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower -> UICollectionViewCell? in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowersCollectionViewCell.reuseID, for: indexPath) as? FollowersCollectionViewCell else {
@@ -126,8 +150,16 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
         })
     }
 
-    @objc private func didTapAddButton() {
+    private func favoriteUser(_ user: User) {
+        let follower = Follower(login: user.login, avatarUrl: user.avatarUrl)
 
+        UserDefaultsService.updateWith(favorite: follower, actionType: .add) { [weak self] error in
+            guard let error = error else {
+                self?.showFollowersAlert(title: "Success!", message: "Successfully favorited user", buttonTitle: "OK")
+                return
+            }
+            self?.showFollowersAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+        }
     }
 }
 
