@@ -43,5 +43,6 @@ Adição de testes unitários serviços de networking e user defaults. Seria pos
 
 ## Demonstração
 
+![](https://github.com/imthiago/followers-github-ios/blob/main/demo.gif)
 
 ```
