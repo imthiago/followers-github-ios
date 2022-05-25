@@ -5,10 +5,15 @@
 //  Created by Thiago de Oliveira Santos on 23/05/22.
 //
 
-import Foundation
+import Combine
 import UIKit
 
-class NetworkService {
+protocol NetworkServiceProtocol {
+    func fetchFollowers(for username: String, page: Int) -> AnyPublisher<[Follower], Error>
+    func fetchUserInfo(for username: String) -> AnyPublisher<User, Error>
+}
+
+class NetworkService: NetworkServiceProtocol {
     static let shared = NetworkService()
     let cache = NSCache<NSString, UIImage>()
     private let baseURL         = "https://api.github.com/users/"
@@ -20,46 +25,30 @@ class NetworkService {
         return decoder
     }()
 
-    private init() { }
+    init() { }
 
-    func getFollowers(for username: String, page: Int) async throws -> [Follower] {
-        let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
-
-        guard let url = URL(string: endpoint) else {
-            throw FollowerErrors.invalidUsername
+    func fetchFollowers(for username: String, page: Int) -> AnyPublisher<[Follower], Error> {
+        if let url = URL(string: baseURL + "\(username)/followers?per_page=100&page=\(page)") {
+            return URLSession.shared
+                .dataTaskPublisher(for: url)
+                .map { $0.data }
+                .decode(type: [Follower].self, decoder: decoder)
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
         }
-
-        let (data, response) = try await URLSession.shared.data(from: url)
-
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw FollowerErrors.invalidResponse
-        }
-
-        do {
-            return try decoder.decode([Follower].self, from: data)
-        } catch {
-            throw FollowerErrors.invalidData
-        }
+        return Fail(error: FollowerErrors.invalidUsername).eraseToAnyPublisher()
     }
 
-    func getUserInfo(for username: String) async throws -> User {
-        let endpoint = baseURL + "\(username)"
-
-        guard let url = URL(string: endpoint) else {
-            throw FollowerErrors.invalidUsername
+    func fetchUserInfo(for username: String) -> AnyPublisher<User, Error> {
+        if let url = URL(string: baseURL + "\(username)") {
+            return URLSession.shared
+                .dataTaskPublisher(for: url)
+                .map { $0.data }
+                .decode(type: User.self, decoder: decoder)
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
         }
-
-        let (data, response) = try await URLSession.shared.data(from: url)
-
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw FollowerErrors.invalidResponse
-        }
-
-        do {
-            return try decoder.decode(User.self, from: data)
-        } catch {
-            throw FollowerErrors.invalidData
-        }
+        return Fail(error: FollowerErrors.invalidUsername).eraseToAnyPublisher()
     }
 
     func downloadImage(from urlString: String) async -> UIImage? {

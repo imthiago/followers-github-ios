@@ -5,7 +5,9 @@
 //  Created by Thiago de Oliveira Santos on 23/05/22.
 //
 
+import Combine
 import UIKit
+import Resolver
 
 class ListFollowersViewController: FollowerLoadingDataViewController {
 
@@ -23,6 +25,11 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
     private var isLoadingMoreFollowers          = false
     private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     private var collectionView: UICollectionView!
+    @Injected var networkService: NetworkServiceProtocol
+
+    // MARK: - Subscriptions
+    private var fetchFollowersSubscription: AnyCancellable?
+    private var fetchUserInfoSubscription: AnyCancellable?
 
     // MARK: - Initialization
     init(username: String) {
@@ -55,24 +62,22 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
         showLoading()
         isLoadingMoreFollowers = true
 
-        Task {
-            do {
-                let followers = try await NetworkService.shared.getFollowers(for: username, page: page)
-                updateView(with: followers)
-                dismissLoadingView()
-                isLoadingMoreFollowers = false
-            } catch {
-                if let followersError = error as? FollowerErrors {
-                    showFollowersAlert(title: "Bad struff happened",
-                                       message: followersError.rawValue,
-                                       buttonTitle: "OK")
-                } else {
-                    showDefaultFollowerError()
+        fetchFollowersSubscription = networkService
+            .fetchFollowers(for: username, page: page)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.dismissLoadingView()
+                    self?.isLoadingMoreFollowers = false
+                    self?.showFollowersAlert(title: "Something went wrong", message: error.localizedDescription, buttonTitle: "OK")
+                case .finished:
+                    break
                 }
-                isLoadingMoreFollowers = false
-                dismissLoadingView()
-            }
-        }
+            }, receiveValue: { [weak self] followers in
+                self?.updateView(with: followers)
+                self?.dismissLoadingView()
+                self?.isLoadingMoreFollowers = false
+            })
     }
 
     private func updateView(with followers: [Follower]) {
@@ -109,21 +114,22 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
 
     @objc private func didTapAddButton() {
         showLoading()
-        Task {
-            do {
-                let user = try await NetworkService.shared.getUserInfo(for: username)
-                favoriteUser(user)
-                dismissLoadingView()
-            } catch {
-                if let followerError = error as? FollowerErrors {
-                    showFollowersAlert(title: "Something went wrong",
-                                       message: followerError.rawValue,
-                                       buttonTitle: "OK")
-                } else {
-                    showDefaultFollowerError()
+        fetchUserInfoSubscription = networkService
+            .fetchUserInfo(for: username)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.dismissLoadingView()
+                    self?.showFollowersAlert(title: "Something went wrong",
+                                             message: error.localizedDescription,
+                                             buttonTitle: "OK")
+                case .finished:
+                    break
                 }
-            }
-        }
+            }, receiveValue: { [weak self] user in
+                self?.favoriteUser(user)
+                self?.dismissLoadingView()
+            })
     }
 
     private func configureSearchController() {

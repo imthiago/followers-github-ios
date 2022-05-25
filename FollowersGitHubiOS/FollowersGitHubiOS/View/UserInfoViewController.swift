@@ -5,6 +5,8 @@
 //  Created by Thiago de Oliveira Santos on 23/05/22.
 //
 
+import Combine
+import Resolver
 import UIKit
 
 protocol UserInfoViewControllerDelegate: AnyObject {
@@ -23,6 +25,11 @@ class UserInfoViewController: FollowerLoadingDataViewController {
 
     var username: String!
     weak var delegate: UserInfoViewControllerDelegate!
+
+    @Injected private var networkService: NetworkServiceProtocol
+
+    // MARK: - Subscriptions
+    private var fetchUserInfoSubscription: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,18 +59,18 @@ class UserInfoViewController: FollowerLoadingDataViewController {
     }
 
     private func getUserInfo() {
-        Task {
-            do {
-                let user = try await NetworkService.shared.getUserInfo(for: username)
-                configureUIElements(with: user)
-            } catch {
-                if let gfError = error as? FollowerErrors {
-                    showFollowersAlert(title: "Something went wrong", message: gfError.rawValue, buttonTitle: "OK")
-                } else {
-                    showDefaultFollowerError()
+        fetchUserInfoSubscription = networkService
+            .fetchUserInfo(for: username)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.showFollowersAlert(title: "Something went wrong", message: error.localizedDescription, buttonTitle: "OK")
+                case .finished:
+                    break
                 }
-            }
-        }
+            }, receiveValue: { [weak self] user in
+                self?.configureUIElements(with: user)
+            })
     }
 
     private func configureUIElements(with user: User) {
