@@ -69,7 +69,9 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
                 case .failure(let error):
                     self?.dismissLoadingView()
                     self?.isLoadingMoreFollowers = false
-                    self?.showFollowersAlert(title: "Something went wrong", message: error.localizedDescription, buttonTitle: "OK")
+                    self?.showFollowersAlert(title: "Something went wrong",
+                                             message: error.localizedDescription,
+                                             buttonTitle: "OK")
                 case .finished:
                     break
                 }
@@ -141,14 +143,20 @@ class ListFollowersViewController: FollowerLoadingDataViewController {
     }
 
     private func configureCollectionView() {
-        collectionView = .init(frame: view.bounds, collectionViewLayout: FollowersUIHelper.createThreeColumnsFlowLayout(in: view))
+        collectionView = .init(frame: view.bounds,
+                               collectionViewLayout: FollowersUIHelper.createThreeColumnsFlowLayout(in: view))
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(FollowersCollectionViewCell.self, forCellWithReuseIdentifier: FollowersCollectionViewCell.reuseID)
+        collectionView.register(FollowersCollectionViewCell.self,
+                                forCellWithReuseIdentifier: FollowersCollectionViewCell.reuseID)
 
-        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower -> UICollectionViewCell? in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowersCollectionViewCell.reuseID, for: indexPath) as? FollowersCollectionViewCell else {
+        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(
+            collectionView: collectionView,
+            cellProvider: { collectionView, indexPath, follower -> UICollectionViewCell? in
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: FollowersCollectionViewCell.reuseID,
+                for: indexPath) as? FollowersCollectionViewCell else {
                 return nil
             }
             cell.set(follower: follower)
@@ -187,9 +195,7 @@ extension ListFollowersViewController: UICollectionViewDelegate {
         let activeArray                 = isSearching ? filteredFollowers : followers
         let follower                    = activeArray[indexPath.item]
 
-        let userInfoViewController      = UserInfoViewController()
-        userInfoViewController.username = follower.login
-        userInfoViewController.delegate = self
+        let userInfoViewController      = UserInfoViewController(username: follower.login, delegate: self)
         let navigationController        = UINavigationController(rootViewController: userInfoViewController)
         present(navigationController, animated: true)
     }

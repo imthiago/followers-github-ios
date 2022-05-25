@@ -67,7 +67,8 @@ extension FavoriteFollowersListViewController: ViewCodable {
         tableView.dataSource = self
         tableView.removeExcessCells()
 
-        tableView.register(FavoriteFollowersTableViewCell.self, forCellReuseIdentifier: FavoriteFollowersTableViewCell.reuseID)
+        tableView.register(FavoriteFollowersTableViewCell.self,
+                           forCellReuseIdentifier: FavoriteFollowersTableViewCell.reuseID)
     }
 
     func setupConstraints() { }
@@ -80,7 +81,8 @@ extension FavoriteFollowersListViewController: UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteFollowersTableViewCell.reuseID) as? FavoriteFollowersTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: FavoriteFollowersTableViewCell.reuseID) as? FavoriteFollowersTableViewCell else {
             return .init(frame: .zero)
         }
         cell.set(favorite: favorites[indexPath.row])
@@ -94,7 +96,9 @@ extension FavoriteFollowersListViewController: UITableViewDelegate, UITableViewD
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         UserDefaultsService.updateWith(favorite: favorites[indexPath.row], actionType: .remove) { [weak self] error in
             guard let error = error else {
