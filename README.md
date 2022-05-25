@@ -31,15 +31,15 @@ Este utiliza apenas duas dependências de terceiros. Sendo elas:
 			- ** Obs.: Para este projeto, o Resolver foi utilizado somente para injeção da classe NetworkService (responsável por fazer as requisições externas.
 
 ## Iniciando o projeto
-Primeiramente, é necessário ter o cocoapods instalado localmente.
-A partir disso, navegue até o diretório ../followers-github-ios/FollowersGitHubiOS e execute o comando **pod install**.
-Aguarde a instalação das dependências e abra o arquivo com extensão **.xcworkspace**
+- Primeiramente, é necessário ter o cocoapods instalado localmente.
+- A partir disso, navegue até o diretório ../followers-github-ios/FollowersGitHubiOS e execute o comando **pod install**.
+- Aguarde a instalação das dependências e abra o arquivo com extensão **.xcworkspace**
 
 ## Próximos passos
-Modificar a estrutura do projeto seguindo o padrão MVVM utilizando Combine ou RxSwift para o binding de dados entre view e viewmodels.
-Adicionar Coordinator para garantir os fluxos entre telas, incluindo os delegates já criados atualmente. Provendo assim uma maior testabilidade na camada de apresentação.
-Adição de testes de snapshot. Uma vez que o projeto não possui tanta lógica envolvida, seja uma maneira de garantir a permanência do design das views.
-Adição de testes unitários serviços de networking e user defaults. Seria possível encapsular a execução de ambos e melhorar a testabilidade de código com mocks.
+- Modificar a estrutura do projeto seguindo o padrão MVVM utilizando Combine ou RxSwift para o binding de dados entre view e viewmodels.
+- Adicionar Coordinator para garantir os fluxos entre telas, incluindo os delegates já criados atualmente. Provendo assim uma maior testabilidade na camada de apresentação.
+- Adição de testes de snapshot. Uma vez que o projeto não possui tanta lógica envolvida, seja uma maneira de garantir a permanência do design das views.
+- Adição de testes unitários serviços de networking e user defaults. Seria possível encapsular a execução de ambos e melhorar a testabilidade de código com mocks.
 
 ## Demonstração
 
